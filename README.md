@@ -9,7 +9,6 @@ DB_PW="" <your password>
 
 
 ### Current Tasks
-
 * [] Jagy
     * [] Backend databases/sql
 * [] Hunter
