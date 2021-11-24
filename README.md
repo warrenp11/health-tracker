@@ -14,5 +14,13 @@ DB_PW="" <your password>
 * [] Hunter
     * [] front-end javascript button functionality
 * [] Peter
+    * [x] create db connection
+    * [x] create User model
+    * [x] implement CURD actions
+    * [x] hook up server
+    * [x] add login route
+    * [x] has password
+    * [] set up handlebars
     * [] Front-end design (done by 11/23)
+
         * use handlebars
