@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Health Tracker</title>
+</head>
+<body class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm"></div>
+            <div class="col-sm">
+                <form class="sign-in">
+                    <h1 class="h3">Please Sign In</h1>
+                    <label for="inputEmail" class="sr-only">Email address</label>
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                    <button class="btn btn-lg btn-primary btn-block mt-5" type="submit">Login In</button>
+                    <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Create An Account</button>
+                </form>
+            </div>
+            <div class="col-sm"></div>
+        </div>
+    </div>
+
+    <!-- <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Exercise</th>
+            <th scope="col">Type</th>
+            <th scope="col">Time</th>
+            <th scope="col">Reps</th>
+            <th scope="col">Sets</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>user</td>
+            <td>user@email.com</td>
+            <td>basketball</td>
+            <td>cardio</td>
+            <td>30</td>
+            <td></td>
+            <td></td>
+            <td>11/23/21</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>user</td>
+            <td>user@email.com</td>
+            <td>situps</td>
+            <td>abs</td>
+            <td>15</td>
+            <td>25</td>
+            <td>5</td>
+            <td>11/23/21</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>scooby-doo</td>
+            <td>scooby-doo@email.com</td>
+            <td>running</td>
+            <td>cardio</td>
+            <td>60</td>
+            <td></td>
+            <td></td>
+            <td>11/24/21</td>
+          </tr>
+        </tbody>
+      </table> -->
+
+      <form class="needs-validation" novalidate>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationCustom01">Name</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Name" value="Bruce" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationCustom02">Username</label>
+            <input type="text" class="form-control" id="validationCustom02" placeholder="username" value="batman" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationCustom03">Email</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+              </div>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" aria-describedby="inputGroupPrepend" required>
+              <div class="invalid-feedback">
+                Please eneter an email.
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- age, gender, height, weight -->
+    
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </form>
+      
+      <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+      </script>
+
+
+
+</body>
+</html>
+
+
+
+
