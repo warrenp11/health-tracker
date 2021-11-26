@@ -1,58 +1,68 @@
 const sequelize = require("../config/connection");
-const { Exercise, Post } = require("../models");
+const { Exercise, User, Activity } = require("../models");
 
-const userdata = [{
+const exercisedata = [{
         exerciseName: "abs",
         VdoLink: "https://www.youtube.com/watch?v=AnYl6Nk9GOA",
-        exerciseId: 001,
+        exercise_Id: 001,
+        category: "Strength"
     },
     {
         exerciseName: "yoga",
         VdoLink: "https://www.youtube.com/watch?v=6hZIzMpHl-c",
-        exerciseId: 002
+        exercise_Id: 002,
+        category: "Yoga"
     },
     {
         exerciseName: "cardio",
         VdoLink: "https://www.youtube.com/watch?v=PvEnWsPrL4w",
-        exerciseId: 003
+        exercise_Id: 003,
+        category: "Strength"
     },
     {
         exerciseName: "Pilates",
         VdoLink: "hhttps://www.youtube.com/watch?v=NyP_waVgL1w",
-        exerciseId: 004
+        exercise_Id: 004,
+        category: "Strength"
     },
     {
         exerciseName: "swimming",
         VdoLink: "https://www.youtube.com/watch?v=cBbA4-EhNf8",
-        exerciseId: 005
+        exercise_Id: 005,
+        category: "Endurance"
     },
     {
         exerciseName: "dance",
         VdoLink: "https://www.youtube.com/watch?v=PvEnWsPrL4w",
-        exerciseId: 006
+        exercise_Id: 006,
+        category: "Endurance"
     },
     {
         exerciseName: "zumba",
         VdoLink: "https://www.youtube.com/watch?v=8DZktowZo_k",
-        exerciseId: 007
+        exercise_Id: 007,
+        category: "WeightLoss"
     },
     {
         exerciseName: "basketball",
         VdoLink: "https://www.youtube.com/watch?v=CMQp0bwjokw",
-        exerciseId: 010
+        exercise_Id: 010,
+        category: "Endurance"
     },
     {
         exerciseName: "tennis",
         VdoLink: "https://www.youtube.com/watch?v=WgmzdLQ4hdQ",
-        exerciseId: 011
+        exercise_Id: 011,
+        category: "Endurance"
     },
     {
         exerciseName: "staircase workout",
         VdoLink: "https://www.youtube.com/watch?v=Y1-uwSGuD5w",
-        exerciseId: 012
+        exercise_Id: 012,
+        category: "Strength"
     }
 ];
 
-const seedUsers = () => User.bulkCreate(userdata, { individualHooks: true });
+const seedExercise = () => User.bulkCreate(exercisedata, { individualHooks: true });
 
-module.exports = seedUsers;
+module.exports = seedExercise;

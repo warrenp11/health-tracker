@@ -1,20 +1,15 @@
 const sequelize = require("../config/connection");
-const { User, Post } = require("../models");
+const { User, Activity, Exercise } = require("../models");
 
 const userdata = [{
         userId: 1001,
         username: "bugsBunny",
         email: "bugsBunny@email.com",
         password: "password123",
-        Age: 20,
-        Gender: "Male",
-        Height: "6.0 ft",
-        Weight: "140",
-        exerciseTime: "13:00",
-        exerciseReps: "20",
-        exerciseSets: "20",
-        ExerciseId: 001
-
+        age: 20,
+        gender: "Male",
+        height: "6.0 ft",
+        weight: "140"
 
     },
     {
@@ -22,168 +17,132 @@ const userdata = [{
         username: "daffyDuck",
         email: "daffyDuck@email.com",
         password: "password123",
-        Age: 25,
-        Gender: "Male",
-        Height: "5.8 ft",
-        Weight: "200",
-        exerciseTime: "13:00",
-        exerciseReps: "16",
-        exerciseSets: "20",
-        ExerciseId: 001
+        age: 25,
+        gender: "Male",
+        height: "5.8 ft",
+        weight: "200"
+
     },
     {
         userId: 1003,
         username: "elmerFudd",
         email: "elmerFudd@email.com",
         password: "password123",
-        Age: 40,
-        Gender: "Male",
-        Height: "6.1 ft",
-        Weight: "180",
-        exerciseTime: "13:00",
-        exerciseReps: "12",
-        exerciseSets: "20",
-        ExerciseId: 002
+        age: 40,
+        gender: "Male",
+        height: "6.1 ft",
+        weight: "180",
+
     },
     {
         userId: 1004,
         username: "foghornLeghorn",
         email: "foghornLeghorn@email.com",
         password: "password123",
-        Age: 22,
-        Gender: "Male",
-        Height: "5.0 ft",
-        Weight: "120",
-        exerciseTime: "13:00",
-        exerciseReps: "20",
-        exerciseSets: "20",
-        ExerciseId: 003
+        age: 22,
+        gender: "Male",
+        height: "5.0 ft",
+        weight: "120",
+
     },
     {
         userId: 1005,
         username: "porkyPig",
         email: "porkyPig@email.com",
         password: "password123",
-        Age: 23,
-        Gender: "Male",
-        Height: "6.0 ft",
+        age: 23,
+        gender: "Male",
+        height: "6.0 ft",
         Weight: "160",
-        exerciseTime: "13:00",
-        exerciseReps: "20",
-        exerciseSets: "20",
-        ExerciseId: 003
+
     },
     {
         userId: 1005,
         username: "marvinMartian",
         email: "marvinMartian@email.com",
         password: "password123",
-        Age: 30,
-        Gender: "Male",
-        Height: "5.6 ft",
-        Weight: "140",
-        exerciseTime: "13:00",
-        exerciseReps: "12",
-        exerciseSets: "20",
-        ExerciseId: 004
+        age: 30,
+        gender: "Male",
+        height: "5.6 ft",
+        weight: "140",
+
     },
     {
         userId: 1006,
         username: "tweetyBird",
         email: "tweetyBird@email.com",
         password: "password123",
-        Age: 50,
-        Gender: "Male",
-        Height: "6.0 ft",
-        Weight: "140",
-        exerciseTime: "13:00",
-        exerciseReps: "15",
-        exerciseSets: "20",
-        ExerciseId: 005
+        age: 50,
+        gender: "Male",
+        height: "6.0 ft",
+        weight: "140",
+
     },
     {
         userId: 1007,
         username: "tazDevil",
         email: "tazDevil@email.com",
         password: "password123",
-        Age: 60,
-        Gender: "Male",
-        Height: "5.0 ft",
-        Weight: "150",
-        exerciseTime: "13:00",
-        exerciseReps: "15",
-        exerciseSets: "20",
-        ExerciseId: 006
+        age: 60,
+        gender: "Male",
+        height: "5.0 ft",
+        weight: "150",
+
     },
     {
         userId: 1008,
         username: "yosemiteSam",
         email: "yosemiteSam@email.com",
         password: "password123",
-        Age: 28,
-        Gender: "Male",
-        Height: "6.0 ft",
-        Weight: "140",
-        exerciseTime: "13:00",
-        exerciseReps: "15",
-        exerciseSets: "20",
-        ExerciseId: 007
+        age: 28,
+        gender: "Male",
+        height: "6.0 ft",
+        weight: "140",
+
     },
     {
         userId: 1009,
         username: "sylvesterCat",
         email: "sylvesterCat@email.com",
         password: "password123",
-        Age: 29,
-        Gender: "Male",
-        Height: "6.0 ft",
-        Weight: "140",
-        exerciseTime: "13:00",
-        exerciseReps: "15",
-        exerciseSets: "20",
-        ExerciseId: 007
+        age: 29,
+        gender: "Male",
+        height: "6.0 ft",
+        weight: "140",
+
     },
     {
         userId: 1010,
         username: "speedyGonzales",
         email: "speedyGonzales@email.com",
         password: "password123",
-        Age: 29,
-        Gender: "Male",
-        Height: "6.0 ft",
-        Weight: "140",
-        exerciseTime: "13:00",
-        exerciseReps: "15",
-        exerciseSets: "20",
-        ExerciseId: 010
+        age: 29,
+        gender: "Male",
+        height: "6.0 ft",
+        weight: "140",
+
     },
     {
         userId: 1011,
         username: "roadRunner",
         email: "roadRunner@email.com",
         password: "password123",
-        Age: 26,
-        Gender: "Male",
-        Height: "6.0 ft",
-        Weight: "140",
-        exerciseTime: "13:00",
-        exerciseReps: "12",
-        exerciseSets: "20",
-        ExerciseId: 011
+        age: 26,
+        gender: "Male",
+        height: "6.0 ft",
+        weight: "140",
+
     },
     {
         userId: 1012,
         username: "wileCoyote",
         email: "wileCoyote@email.com",
         password: "password123",
-        Age: 20,
-        Gender: "Male",
-        Height: "6.0 ft",
-        Weight: "140",
-        exerciseTime: "13:00",
-        exerciseReps: "15",
-        exerciseSets: "20",
-        ExerciseId: 012
+        age: 20,
+        gender: "Male",
+        height: "6.0 ft",
+        weight: "140",
+
     }
 ];
 
