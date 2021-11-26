@@ -45,14 +45,14 @@ Activity.init({
         type: DataTypes.INTEGER,
         references: {
             model: 'exercise',
-            key: 'exercise_Id'
+            key: 'id'
         }
     },
     U_id: {
         type: DataTypes.INTEGER,
         references: {
             model: 'user',
-            key: 'userId'
+            key: 'id'
         }
 
     }
