@@ -74,6 +74,13 @@ User.init({
             len: [4],
         },
     },
+    exerciseId: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'exercise',
+            key: 'exercise_Id'
+        }
+    }
 }, {
     hooks: {
         // set up beforeCreate lifecycle "hook" functionality

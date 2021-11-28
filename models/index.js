@@ -8,13 +8,17 @@ module.exports = { User, Exercise, Activity };
 
 // create associations
 
-User.hasMany(Activity, {
-    through: Exercise,
-    as: 'ex_Id'
-    foreignKey: 'ex_Id'
-})
+// User.hasMany(Activity, {
+//     through: Exercise,
+//     as: 'ex_Id',
+//     foreignKey: 'ex_Id'
+// })
 
-Activity.belongsTo(User, {
+Activity.belongsToMany(User, {
     through: 'U_id',
     foreignKey: 'U_id'
+})
+
+Exercise.hasMany(User, {
+    foreignKey: 'exerciseId'
 })
