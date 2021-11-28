@@ -14,7 +14,7 @@ class User extends Model {
 User.init({
     // TABLE COLUMN DEFINITIONS GO HERE
     // define an id column
-    userId: {
+    id: {
         // use the special Sequelize DataTypes object provide what type of data it is
         type: DataTypes.INTEGER,
         // this is the equivalent of SQL's `NOT NULL` option
@@ -40,19 +40,16 @@ User.init({
         allowNull: false,
     },
     // define height column
-
     height: {
         type: DataTypes.STRING,
         allowNull: false,
     },
     // define weight column
-
-    Weight: {
+    weight: {
         type: DataTypes.STRING,
         allowNull: false,
     },
     // define exercise time column
-
 
     // define an email column
     email: {
@@ -74,10 +71,12 @@ User.init({
             len: [4],
         },
     },
-}, {
+}, 
+{
     hooks: {
         // set up beforeCreate lifecycle "hook" functionality
         async beforeCreate(newUserData) {
+            console.log(newUserData)
             newUserData.password = await bcrypt.hash(newUserData.password, 10);
             return newUserData;
         },
