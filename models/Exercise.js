@@ -13,7 +13,7 @@ class Exercise extends Model {
 Exercise.init({
     // TABLE COLUMN DEFINITIONS GO HERE
     // define an id column
-    exercise_Id: {
+    id: {
         // use the special Sequelize DataTypes object provide what type of data it is
         type: DataTypes.INTEGER,
         // this is the equivalent of SQL's `NOT NULL` option
@@ -29,7 +29,7 @@ Exercise.init({
         allowNull: false,
     },
     // define video link column
-    VdoLink: {
+    videoLink: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -38,10 +38,8 @@ Exercise.init({
         type: DataTypes.STRING,
         allowNull: false,
     }
-
-
-}, {
-
+}, 
+{
     // TABLE CONFIGURATION OPTIONS GO HERE (https://sequelize.org/v5/manual/models-definition.html#configuration))
     // pass in our imported sequelize connection (the direct connection to our database)
     sequelize,
