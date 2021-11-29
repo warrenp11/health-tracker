@@ -15,7 +15,7 @@ Exercise.belongsToMany(User, {
 User.belongsToMany(Exercise, {
     through: Activity,
     as: 'u_Id',
-    foreignKey: 'u_Id'
+    foreignKey: 'user_id'
 })
 
 module.exports = { User, Exercise, Activity };
