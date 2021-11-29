@@ -1,65 +1,65 @@
 const sequelize = require("../config/connection");
 const { Exercise, User, Activity } = require("../models");
 
-const exercisedata = [{
+let exercisedata = [{
         exerciseName: "abs",
-        VdoLink: "https://www.youtube.com/watch?v=AnYl6Nk9GOA",
-        exercise_Id: 001,
-        category: "Strength"
+        videoLink: "https://www.youtube.com/watch?v=AnYl6Nk9GOA",
+        category: "Strength",
+        user_id: 1
     },
     {
         exerciseName: "yoga",
-        VdoLink: "https://www.youtube.com/watch?v=6hZIzMpHl-c",
-        exercise_Id: 002,
-        category: "Yoga"
+        videoLink: "https://www.youtube.com/watch?v=6hZIzMpHl-c",
+        category: "Yoga",
+        user_id: 2
     },
     {
         exerciseName: "cardio",
-        VdoLink: "https://www.youtube.com/watch?v=PvEnWsPrL4w",
-        exercise_Id: 003,
-        category: "Strength"
+        videoLink: "https://www.youtube.com/watch?v=PvEnWsPrL4w",
+        category: "Strength",
+        user_id: 3
     },
     {
         exerciseName: "Pilates",
-        VdoLink: "hhttps://www.youtube.com/watch?v=NyP_waVgL1w",
-        exercise_Id: 004,
-        category: "Strength"
+        videoLink: "hhttps://www.youtube.com/watch?v=NyP_waVgL1w",
+        category: "Strength",
+        user_id: 4
     },
     {
         exerciseName: "swimming",
-        VdoLink: "https://www.youtube.com/watch?v=cBbA4-EhNf8",
-        exercise_Id: 005,
-        category: "Endurance"
+        videoLink: "https://www.youtube.com/watch?v=cBbA4-EhNf8",
+        category: "Endurance",
+        user_id: 5
     },
     {
         exerciseName: "dance",
-        VdoLink: "https://www.youtube.com/watch?v=PvEnWsPrL4w",
-        exercise_Id: 006,
-        category: "Endurance"
+        videoLink: "https://www.youtube.com/watch?v=PvEnWsPrL4w",
+        category: "Endurance",
+        user_id: 6
     },
     {
         exerciseName: "zumba",
-        VdoLink: "https://www.youtube.com/watch?v=8DZktowZo_k",
-        exercise_Id: 007,
-        category: "WeightLoss"
+        videoLink: "https://www.youtube.com/watch?v=8DZktowZo_k",
+        category: "WeightLoss",
+        user_id: 7
     },
     {
         exerciseName: "basketball",
-        VdoLink: "https://www.youtube.com/watch?v=CMQp0bwjokw",
-        exercise_Id: 010,
-        category: "Endurance"
+        videoLink: "https://www.youtube.com/watch?v=CMQp0bwjokw",
+        category: "Endurance",
+        user_id: 3
     },
     {
         exerciseName: "tennis",
-        VdoLink: "https://www.youtube.com/watch?v=WgmzdLQ4hdQ",
-        exercise_Id: 011,
-        category: "Endurance"
+        videoLink: "https://www.youtube.com/watch?v=WgmzdLQ4hdQ",
+        category: "Endurance",
+        user_id: 4
     },
     {
         exerciseName: "staircase workout",
-        VdoLink: "https://www.youtube.com/watch?v=Y1-uwSGuD5w",
-        exercise_Id: 012,
-        category: "Strength"
+        videoLink: "https://www.youtube.com/watch?v=Y1-uwSGuD5w",
+        category: "Strength",
+        user_id: 5
     }
 ];
 

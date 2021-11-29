@@ -1,42 +1,34 @@
 const sequelize = require("../config/connection");
 const { Activity, User, Exercise } = require("../models");
 
-const activitydata = [{
-        ex_Time: "13:00",
-        ex_Reps: "20",
-        ex_Sets: "20",
-        ex_Id: 001,
-        U_id: 1001,
-        Activity_Id: 01
-
-    },
-    {
-        ex_Time: "13:00",
-        ex_Reps: "20",
-        ex_Sets: "20",
-        ex_Id: 002,
-        U_id: 1002,
-        Activity_Id: 02
-
-    },
-    {
-        ex_Time: "13:00",
-        ex_Reps: "20",
-        ex_Sets: "20",
-        ex_Id: 003,
-        U_id: 1003,
-        Activity_Id: 03
-
-    },
-    {
-        ex_Time: "13:00",
-        ex_Reps: "20",
-        ex_Sets: "20",
-        ex_Id: 004,
-        U_id: 1004,
-        Activity_Id: 04
-
-    }
+let activitydata = [{
+    ex_Time: "13:00",
+    ex_Reps: "20",
+    ex_Sets: "20",
+    ex_Id: 1,
+    user_id: 1,
+},
+{
+    ex_Time: "13:00",
+    ex_Reps: "20",
+    ex_Sets: "20",
+    ex_Id: 2,
+    user_id: 2,
+},
+{
+    ex_Time: "13:00",
+    ex_Reps: "20",
+    ex_Sets: "20",
+    ex_Id: 3,
+    user_id: 3,
+},
+{
+    ex_Time: "13:00",
+    ex_Reps: "20",
+    ex_Sets: "20",
+    ex_Id: 4,
+    user_id: 4,
+}
 ];
 
 const seedActivity = () => User.bulkCreate(activitydata, { individualHooks: true });

@@ -1,6 +1,3 @@
-const User = require('./User');
-const Activity = require('./Activity');
-
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
@@ -21,22 +18,29 @@ Exercise.init({
         // instruct that this is the Primary Key
         primaryKey: true,
         // turn on auto increment
-        autoIncrement: true,
+        autoIncrement: true
     },
     // define a exercise name column
     exerciseName: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     // define video link column
     videoLink: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     // define category col
     category: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
+    },
+    user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id'
+        }
     }
 }, 
 {
@@ -50,7 +54,7 @@ Exercise.init({
     // use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)
     underscored: true,
     // make it so our model name stays lowercase in the database
-    modelName: "exercise",
+    modelName: "exercise"
 });
 
 module.exports = Exercise;

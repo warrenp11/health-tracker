@@ -1,9 +1,5 @@
-const User = require('./User');
-const Exercise = require('./Exercise');
-
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-
 
 // create our Exercise model
 class Activity extends Model {
@@ -22,24 +18,24 @@ Activity.init({
         // instruct that this is the Primary Key
         primaryKey: true,
         // turn on auto increment
-        autoIncrement: true,
+        autoIncrement: true
     },
     // define a exercise Time column
     ex_Time: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     // define exercise reps column
 
     ex_Reps: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     // define exercise set column
 
     ex_Sets: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     ex_Id: {
         type: DataTypes.INTEGER,
@@ -48,7 +44,7 @@ Activity.init({
             key: 'id'
         }
     },
-    u_id: {
+    user_id: {
         type: DataTypes.INTEGER,
         references: {
             model: 'user',
@@ -67,7 +63,7 @@ Activity.init({
     // use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)
     underscored: true,
     // make it so our model name stays lowercase in the database
-    modelName: "activity",
+    modelName: "activity"
 });
 
 module.exports = Activity;
