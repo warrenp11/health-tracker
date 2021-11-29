@@ -5,7 +5,10 @@ const { Exercise } = require("../../models");
 router.get("/", (req, res) => {
     // Access our User model and run .findAll() method)
     Exercise.findAll({
-            attributes: ['id', 'exerciseName', 'videoLink', 'category']
+            attributes: ['id', 'exerciseName', 'videoLink', 'category'],
+            order: [
+                ['id', 'ASC']
+            ]
         })
         .then((dbExerciseData) => res.json(dbExerciseData))
         .catch((err) => {
