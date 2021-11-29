@@ -22,32 +22,32 @@ User.init({
         // instruct that this is the Primary Key
         primaryKey: true,
         // turn on auto increment
-        autoIncrement: true,
+        autoIncrement: true
     },
     // define a username column
     username: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     // define age column
     age: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: false
     },
     // define gender column
     gender: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     // define height column
     height: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     // define weight column
     weight: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     // define exercise time column
 
@@ -59,8 +59,8 @@ User.init({
         unique: true,
         // if allowNull is set to false, we can run our data through validators before creating the table data
         validate: {
-            isEmail: true,
-        },
+            isEmail: true
+        }
     },
     // define a password column
     password: {
@@ -68,9 +68,9 @@ User.init({
         allowNull: false,
         validate: {
             // this means the password must be at least four characters long
-            len: [4],
-        },
-    },
+            len: [4]
+        }
+    }
 }, 
 {
     hooks: {
@@ -96,7 +96,7 @@ User.init({
     // use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)
     underscored: true,
     // make it so our model name stays lowercase in the database
-    modelName: "user",
+    modelName: "user"
 });
 
 module.exports = User;

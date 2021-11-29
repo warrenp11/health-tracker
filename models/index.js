@@ -9,13 +9,13 @@ const Activity = require('./Activity');
 Exercise.belongsToMany(User, {
     through: Activity,
     as: 'ex_Id',
-    foreignKey: 'exercise_id'
+    foreignKey: 'ex_Id'
 })
 
 User.belongsToMany(Exercise, {
     through: Activity,
     as: 'u_Id',
-    foreignKey: 'user_id'
+    foreignKey: 'u_Id'
 })
 
 module.exports = { User, Exercise, Activity };
