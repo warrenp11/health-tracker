@@ -37,7 +37,7 @@ Activity.init({
         type: DataTypes.STRING,
         allowNull: false
     },
-    exercise_id: {
+    ex_Id: {
         type: DataTypes.INTEGER,
         references: {
             model: 'exercise',

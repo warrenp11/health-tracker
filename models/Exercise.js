@@ -35,7 +35,7 @@ Exercise.init({
         type: DataTypes.STRING,
         allowNull: false
     },
-    user_id: {
+    u_Id: {
         type: DataTypes.INTEGER,
         references: {
             model: 'user',
