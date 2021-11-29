@@ -5,7 +5,7 @@ const { Exercise } = require("../../models");
 router.get("/", (req, res) => {
     // Access our User model and run .findAll() method)
     Exercise.findAll({
-            attributes: ['id', 'exerciseName', 'videoLink', 'category'],
+            attributes: ['id', 'exerciseName', 'videoLink', 'category', 'u_Id'],
             order: [
                 ['id', 'ASC']
             ]
