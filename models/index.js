@@ -14,7 +14,7 @@ Exercise.belongsToMany(User, {
 
 User.belongsToMany(Exercise, {
     through: Activity,
-    as: 'u_id',
+    as: 'u_Id',
     foreignKey: 'user_id'
 })
 
