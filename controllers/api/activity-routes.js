@@ -25,10 +25,6 @@ router.get('/:id', (req, res) => {
     Activity.findOne({
             where: {
                 id: req.params.id
-            },
-            include: {
-                model: User,
-                attributes: ['id']
             }
         })
         .then(dbActivityData => {
@@ -44,15 +40,17 @@ router.get('/:id', (req, res) => {
         });
 });
 
-// POST /api/users
+// POST /api/Activities
 router.post("/", (req, res) => {
     // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
     Activity.create({
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password,
+            ex_Time: req.body.ex_Time,
+            ex_Reps: req.body.ex_Reps,
+            ex_Sets: req.body.ex_Sets,
+            ex_Id: req.body.ex_Id,
+            u_Id: req.body.u_Id
         })
-        .then((dbUserData) => res.json(dbUserData))
+        .then((dbActivityData) => res.json(dbActivityData))
         .catch((err) => {
             console.log(err);
             res.status(500).json(err);
@@ -62,21 +60,18 @@ router.post("/", (req, res) => {
 
 // PUT /api/activities/1
 router.put("/:id", (req, res) => {
-    // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
 
-    // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
     Activity.update(req.body, {
-            individualHooks: true,
             where: {
                 id: req.params.id,
             },
         })
-        .then((dbUserData) => {
-            if (!dbUserData[0]) {
-                res.status(404).json({ message: "No user found with this id" });
+        .then((dbActivityData) => {
+            if (!dbActivityData[0]) {
+                res.status(404).json({ message: "No activity found with this id" });
                 return;
             }
-            res.json(dbUserData);
+            res.json(dbActivityData);
         })
         .catch((err) => {
             console.log(err);
@@ -91,12 +86,12 @@ router.delete("/:id", (req, res) => {
                 id: req.params.id,
             },
         })
-        .then((dbUserData) => {
-            if (!dbUserData) {
+        .then((dbActivityData) => {
+            if (!dbActivityData) {
                 res.status(404).json({ message: "No user found with this id" });
                 return;
             }
-            res.json(dbUserData);
+            res.json(dbActivityData);
         })
         .catch((err) => {
             console.log(err);
