@@ -45,6 +45,10 @@ router.post("/", (req, res) => {
             username: req.body.username,
             email: req.body.email,
             password: req.body.password,
+            age: req.body.age,
+            gender: req.body.gender,
+            height: req.body.height,
+            weight: req.body.weight
         })
         .then((dbUserData) => res.json(dbUserData))
         .catch((err) => {
@@ -77,6 +81,18 @@ router.post("/login", (req, res) => {
 
         res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
+});
+
+// logout route
+router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.render('login');
+        });
+    }
+    else{
+        res.render('login');
+    }
 });
 
 // PUT /api/users/1
