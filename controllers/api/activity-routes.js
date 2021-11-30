@@ -1,11 +1,14 @@
 const router = require("express").Router();
 const { Activity } = require("../../models");
 
-// GET /api/exercise
+// GET /api/activity
 router.get("/", (req, res) => {
-    // Access our User model and run .findAll() method)
+    // Access our Acitivity model and run .findAll() method)
     Activity.findAll({
-            attributes: ['id', 'ex_Time', 'ex_Reps', 'ex_Sets', 'ex_Id', 'u_Id']
+            attributes: ['id', 'ex_Time', 'ex_Reps', 'ex_Sets', 'ex_Id', 'u_Id'],
+            order: [
+                ['id', 'ASC']
+            ]
         })
         .then((dbActivityData) => res.json(dbActivityData))
         .catch((err) => {
