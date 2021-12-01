@@ -1,10 +1,11 @@
+// function allows user to create an account
 async function signupFormHandler(event) {
     event.preventDefault();
+    console.log(event);
 
-    console.log(event)
     const formData = new FormData(event.target);
     const formProps = Object.fromEntries(formData);
-    console.log(formProps)
+    console.log(formProps);
 
     const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
@@ -36,4 +37,4 @@ async function signupFormHandler(event) {
     }
 };
 
-document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
+document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
