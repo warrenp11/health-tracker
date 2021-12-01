@@ -1,5 +1,33 @@
 # health-tracker
 
+User model:
+    email,
+    password,
+    username,
+    age,
+    gender,
+    height,
+    weight
+
+Exercise model:
+    `name`,
+    `category`,
+    `link`,
+    user_id
+
+Activity model:
+    `time`,
+    `sets`,
+    `reps`,
+    exid,
+    uid,
+
+
+
+
+
+
+
 ### Deploy to Heroku (through main) early to test data
 
 ### Environment Variables
