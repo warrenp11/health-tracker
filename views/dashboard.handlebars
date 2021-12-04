@@ -5,9 +5,9 @@
         <div class="card-header user">User:</div>
         <div class="card-body">
           <h5 class="card-title name">Username</h5>
-          <p class="card-text">{{username}}</p>
+          <p class="card-text">{{user.username}}</p>
           <h5 class="card-title">Email</h5>
-          <p class="card-text">{{email}}</p>
+          <p class="card-text">{{user.email}}</p>
         </div>
       </div>
 
@@ -15,9 +15,9 @@
         <div class="card-header">Header:</div>
         <div class="card-body">
           <h5 class="card-title">Height</h5>
-          <p class="card-text">{{height}}</p>
+          <p class="card-text">{{user.height}}</p>
           <h5 class="card-title">weight</h5>
-          <p class="card-text">{{weight}}</p>
+          <p class="card-text">{{user.weight}}</p>
         </div>
       </div>
 
@@ -25,9 +25,9 @@
         <div class="card-header">Header:</div>
         <div class="card-body">
           <h5 class="card-title">Age:</h5>
-          <p class="card-text">{{age}}</p>
+          <p class="card-text">{{user.age}}</p>
           <h5 class="card-title">Gender:</h5>
-          <p class="card-text">{{gender}}</p>
+          <p class="card-text">{{user.gender}}</p>
         </div>
       </div>
 
@@ -46,37 +46,17 @@
           </tr>
         </thead>
         <tbody>
+          {{#each user.exercises}}
           <tr>
             <th scope="row">1</th>
-            <td>{{exercise}}</td>
+            <td>{{exerciseName}}</td>
             <td>{{category}}</td>
-            <td>{{ex_Time}}</td>
-            <td>{{ex_Reps}}</td>
-            <td>{{ex_Sets}}</td>
+            <td>{{activities.ex_Time}}</td>
+            <td>{{activities.ex_Reps}}</td>
+            <td>{{activities.ex_Sets}}</td>
             <td>11/23/21</td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>user</td>
-            <td>user@email.com</td>
-            <td>situps</td>
-            <td>abs</td>
-            <td>15</td>
-            <td>25</td>
-            <td>5</td>
-            <td>11/23/21</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>scooby-doo</td>
-            <td>scooby-doo@email.com</td>
-            <td>running</td>
-            <td>cardio</td>
-            <td>60</td>
-            <td></td>
-            <td></td>
-            <td>11/24/21</td>
-          </tr>
+          {{/each}}
         </tbody>
       </table>
     </div>
