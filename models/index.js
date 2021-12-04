@@ -6,11 +6,11 @@ const Activity = require('./Activity');
 
 // create associations
 
-Exercise.belongsToMany(User, {
-    through: Activity,
-    as: 'ex_Id',
-    foreignKey: 'ex_Id'
-})
+// Exercise.belongsToMany(User, {
+//     through: Activity,
+//     as: 'ex_Id',
+//     foreignKey: 'ex_Id'
+// })
 
 User.belongsToMany(Exercise, {
     through: Activity,
@@ -18,4 +18,9 @@ User.belongsToMany(Exercise, {
     foreignKey: 'u_Id'
 })
 
+Exercise.hasMany(Activity, {
+    // through: User,
+    as: 'exercise-Id',
+    foreignKey: 'ex_Id'
+})
 module.exports = { User, Exercise, Activity };

@@ -50,7 +50,14 @@ router.post("/", (req, res) => {
             height: req.body.height,
             weight: req.body.weight
         })
-        .then((dbUserData) => res.json(dbUserData))
+        .then(dbUserData => {
+            req.session.save(() => {
+                req.session.u_Id = dbUserData.id;
+                req.session.username = dbUserData.username;
+                req.session.loggedIn = true;
+                res.json(dbUserData);
+            });
+        })
         .catch((err) => {
             console.log(err);
             res.status(500).json(err);
@@ -70,6 +77,7 @@ router.post("/login", (req, res) => {
             return;
         }
 
+
         // res.json({ user: dbUserData });
 
         // Verify user
@@ -78,8 +86,14 @@ router.post("/login", (req, res) => {
             res.status(400).json({ message: 'Incorrect password!' });
             return;
         }
+        req.session.save(() => {
+            // declare session variables
+            req.session.u_Id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
+            res.json({ user: dbUserData, message: 'You are now logged in!' });
+        });
 
-        res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
 });
 
@@ -89,8 +103,7 @@ router.post('/logout', (req, res) => {
         req.session.destroy(() => {
             res.render('login');
         });
-    }
-    else{
+    } else {
         res.render('login');
     }
 });
