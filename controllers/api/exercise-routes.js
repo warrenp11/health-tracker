@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const withAuth = require('../../utils/auth');
 const { Exercise } = require("../../models");
 
 // GET /api/exercise
@@ -41,7 +42,7 @@ router.get("/:id", (req, res) => {
 // post put delete
 
 // PUT /api/exercises/1
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
 
     Exercise.update(req.body, {
             where: {
@@ -62,7 +63,7 @@ router.put("/:id", (req, res) => {
 });
 
 // DELETE /api/users/1
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
     Exercise.destroy({
             where: {
                 id: req.params.id,
@@ -81,8 +82,7 @@ router.delete("/:id", (req, res) => {
         });
 });
 // POST /api/exercises
-router.post("/", (req, res) => {
-
+router.post("/", withAuth, (req, res) => {
     Exercise.create({
             exerciseName: req.body.exerciseName,
             videoLink: req.body.videoLink,

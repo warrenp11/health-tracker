@@ -18,7 +18,7 @@ router.get("/dashboard", (req, res) => {
       let activityPageData = {
         user: dbUser,
       }
-      // console.log(dbUserData[0]);
+      console.log(activityPageData);
       res.render("dashboard", activityPageData);
     })
     .catch((err) => {
@@ -33,6 +33,10 @@ router.get("/", (req, res) => {
 
 router.get("/signup", (req, res) => {
   res.render("signup");
+});
+
+router.get("/workout", (req, res) => {
+  res.render("workout");
 });
 
 module.exports = router;

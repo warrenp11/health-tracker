@@ -16,6 +16,10 @@ Exercise.belongsTo(User, {
     foreignKey: 'u_Id'
 })
 
+Activity.belongsTo(User, {
+    foreignKey: 'u_Id'
+})
+
 User.hasMany(Exercise, {
     foreignKey: 'u_Id'
 })
