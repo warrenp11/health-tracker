@@ -12,15 +12,24 @@ const Activity = require('./Activity');
 //     foreignKey: 'ex_Id'
 // })
 
-User.belongsToMany(Exercise, {
-    through: Activity,
-    as: 'u_Id',
+Exercise.belongsTo(User, {
     foreignKey: 'u_Id'
 })
 
-Exercise.hasMany(Activity, {
-    // through: User,
-    as: 'exercise-Id',
+User.hasMany(Exercise, {
+    foreignKey: 'u_Id'
+})
+
+// User.belongsToMany(Exercise, {
+//     through: Activity,
+//     foreignKey: 'u_Id'
+// })
+Activity.belongsTo(Exercise, {
     foreignKey: 'ex_Id'
 })
+
+Exercise.hasMany(Activity, {
+    foreignKey: 'ex_Id'
+})
+
 module.exports = { User, Exercise, Activity };
