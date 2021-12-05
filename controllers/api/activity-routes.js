@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const withAuth = require('../../utils/auth');
 const { Activity } = require("../../models");
 
 // GET /api/activity
@@ -41,7 +42,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST /api/Activities
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
     // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
     Activity.create({
             ex_Time: req.body.ex_Time,
@@ -59,7 +60,7 @@ router.post("/", (req, res) => {
 
 
 // PUT /api/activities/1
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
 
     Activity.update(req.body, {
             where: {
@@ -80,7 +81,7 @@ router.put("/:id", (req, res) => {
 });
 
 // DELETE /api/activities/1
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
     Activity.destroy({
             where: {
                 id: req.params.id,
