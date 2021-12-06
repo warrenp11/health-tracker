@@ -11,14 +11,12 @@ router.get("/dashboard", (req, res) => {
   }})
     .then((dbActivityData) => {
       const dbUser= dbActivityData.get({plain:true})
-     
       console.log("user: ",dbUser)
       
-      //console.log("*********" + dbActivityData);
       let activityPageData = {
         user: dbUser,
       }
-      console.log(activityPageData);
+      console.log("activity: ",activityPageData);
       res.render("dashboard", activityPageData);
     })
     .catch((err) => {

@@ -21,7 +21,7 @@ let exercisedata = [{
     },
     {
         exerciseName: "Pilates",
-        videoLink: "hhttps://www.youtube.com/watch?v=NyP_waVgL1w",
+        videoLink: "https://www.youtube.com/watch?v=NyP_waVgL1w",
         category: "Strength",
         u_Id: 4
     },

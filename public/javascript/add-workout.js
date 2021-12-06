@@ -14,7 +14,7 @@ async function newWorkoutHandler(event) {
     const sets = document.querySelector('#sets').value.trim();
 
     if (formProps) {
-        const response = await fetch('/api/workout', {
+        const response = await fetch('/api/activities', {
             method: 'post',
             body: JSON.stringify({
                 exName,
