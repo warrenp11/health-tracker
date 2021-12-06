@@ -50,11 +50,14 @@
         <tr>
           <th scope="row">1</th>
           <td>{{exerciseName}}</td>
+          {{!-- <td><a href="">{{videoLink}}</a></td> --}}
           <td>{{category}}</td>
-          <td>{{activities.ex_Time}}</td>
-          <td>{{activities.ex_Reps}}</td>
+          {{#each activities}}
+          <td>{{ex_Time}}</td>
+          <td>{{ex_Reps}}</td>
           <td>{{ex_Sets}}</td>
           <td>{{format_date created_at}}</td>
+          {{/each}}
         </tr>
         {{/each}}
       </tbody>
