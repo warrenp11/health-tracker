@@ -2,9 +2,7 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 // create our Exercise model
-class Exercise extends Model {
-
-}
+class Exercise extends Model {}
 
 // define table columns and configuration
 Exercise.init({
@@ -48,7 +46,7 @@ Exercise.init({
     // pass in our imported sequelize connection (the direct connection to our database)
     sequelize,
     // don't automatically create createdAt/updatedAt timestamp fields
-    timestamps: false,
+    timestamps: true,
     // don't pluralize name of database table
     freezeTableName: true,
     // use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)

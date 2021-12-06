@@ -2,9 +2,7 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 // create our Exercise model
-class Activity extends Model {
-
-}
+class Activity extends Model {}
 
 // define table columns and configuration
 Activity.init({
@@ -26,13 +24,11 @@ Activity.init({
         allowNull: false
     },
     // define exercise reps column
-
     ex_Reps: {
         type: DataTypes.STRING,
         allowNull: false
     },
     // define exercise set column
-
     ex_Sets: {
         type: DataTypes.STRING,
         allowNull: false
@@ -56,7 +52,7 @@ Activity.init({
     // pass in our imported sequelize connection (the direct connection to our database)
     sequelize,
     // don't automatically create createdAt/updatedAt timestamp fields
-    timestamps: false,
+    timestamps: true,
     // don't pluralize name of database table
     freezeTableName: true,
     // use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)
