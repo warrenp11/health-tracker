@@ -8,7 +8,8 @@ router.get("/dashboard", (req, res) => {
     include: [{model: Exercise , include: [{model: Activity }]}],
     where:{
       id: req.session.u_Id
-  }})
+    }
+    })
     .then((dbActivityData) => {
       const dbUser= dbActivityData.get({plain:true})
       console.log("user: ",dbUser)

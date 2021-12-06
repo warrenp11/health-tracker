@@ -49,8 +49,6 @@ User.init({
         type: DataTypes.STRING,
         allowNull: false
     },
-    // define exercise time column
-
     // define an email column
     email: {
         type: DataTypes.STRING,
