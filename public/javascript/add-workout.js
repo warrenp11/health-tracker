@@ -13,8 +13,8 @@ async function newWorkoutHandler(event) {
     const reps = document.querySelector('#reps').value.trim();
     const sets = document.querySelector('#sets').value.trim();
 
-    if (formProps) {
-        const response = await fetch('/api/exercises', {
+    if (exName && exType && exTime && reps && sets) {
+        const response = await fetch('/api/exercises/', {
             method: 'post',
             body: JSON.stringify({
                 exName,
@@ -25,13 +25,41 @@ async function newWorkoutHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
+
+
         if (response.ok) {
+            document.location.replace('/dashboard');
             console.log('success');
-            document.location.replace('/dashboard')
         } else {
             alert(response.statusText);
         }
     }
 };
+
+
+
+
+
+
+// if (exName && exType && exTime && reps && sets) {
+//     const response = await fetch('/api/activities', {
+//         method: 'post',
+//         body: JSON.stringify({
+//             exTime,
+//             reps,
+//             sets
+//         }),
+//         headers: { 'Content-Type': 'application/json' }
+//     });
+
+
+//     if (response.ok) {
+//         document.location.replace('/dashboard');
+//         console.log('success');
+//     } else {
+//         alert(response.statusText);
+//     }
+// }
+
 
 document.querySelector('.addworkout-form').addEventListener('submit', newWorkoutHandler);
