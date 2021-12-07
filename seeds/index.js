@@ -1,7 +1,6 @@
 const seedUsers = require('./user-seeds');
 const seedExercise = require('./exercise-seeds');
 const seedActivity = require('./activity-seeds');
-
 const sequelize = require('../config/connection');
 
 const seedAll = async() => {
