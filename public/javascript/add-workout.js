@@ -14,7 +14,6 @@ async function newWorkoutHandler(event) {
     const reps = document.querySelector('#reps').value.trim();
     const sets = document.querySelector('#sets').value.trim();
 
-    // if all the values are met then:
     if (exName && exType && exTime && reps && sets) {
         const response = await fetch('/api/exercises/', {
             method: 'post',
