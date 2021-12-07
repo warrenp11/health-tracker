@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const withAuth = require('../../utils/auth');
-const { Exercise } = require("../../models");
+const { Exercise, Activity } = require("../../models");
 
 // GET /api/exercise
 router.get("/", (req, res) => {
@@ -84,17 +84,31 @@ router.delete("/:id", withAuth, (req, res) => {
 // POST /api/exercises
 router.post("/", withAuth, (req, res) => {
     Exercise.create({
-            exerciseName: req.body.exerciseName,
-            videoLink: req.body.videoLink,
-            category: req.body.category,
-            u_Id: req.body.u_Id
+            exerciseName: req.body.exName,
+            videoLink: '',
+            category: req.body.exType,
+            u_Id: req.session.u_Id
 
         })
-        .then((dbExerciseData) => res.json(dbExerciseData))
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+        .then((dbExerciseData) => (dbExerciseData))
+        .then((dbExerciseData) => {
+            console.log(dbExerciseData);
+            return Activity.create({
+                ex_Time: req.body.exTime,
+                ex_Reps: req.body.reps,
+                ex_Sets: req.body.sets,
+                ex_Id: dbExerciseData.id
+
+            })
+        }).then((dbExerciseData) => res.json(dbExerciseData))
+
+
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+
+
 });
 
 module.exports = router;
