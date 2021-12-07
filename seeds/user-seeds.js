@@ -120,12 +120,6 @@ let userdata = [{
     }
 ];
 
-// userdata = userdata.map(user => {
-//     // user.get({plain: true})
-//     console.log(user)
-//     user = user.get({ plain: true })
-// })
-
 const seedUsers = () => User.bulkCreate(userdata, {individualHooks: true});
 
 module.exports = seedUsers;

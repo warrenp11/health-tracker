@@ -5,26 +5,25 @@ const router = require("express").Router();
 router.get("/dashboard", (req, res) => {
     console.log(req.session)
     User.findOne({
-            include: [{ model: Exercise, include: [{ model: Activity }] }],
-            where: {
-                id: req.session.u_Id
-            }
-        })
-        .then((dbActivityData) => {
-            const dbUser = dbActivityData.get({ plain: true })
-            console.log("user: ", dbUser)
+        include: [{ model: Exercise, include: [{ model: Activity }] }],
+        where: {
+            id: req.session.u_Id
+        }
+    })
+    .then((dbActivityData) => {
+        const dbUser = dbActivityData.get({ plain: true })
+        console.log("user: ", dbUser)
 
-            let activityPageData = {
-                user: dbUser,
-            }
-            console.log("activity:", activityPageData);
-            res.render("dashboard", activityPageData);
-
-        })
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+        let activityPageData = {
+            user: dbUser,
+        }
+        console.log("activity:", activityPageData);
+        res.render("dashboard", activityPageData);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 router.get("/", (req, res) => {

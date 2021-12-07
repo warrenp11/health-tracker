@@ -31,7 +31,6 @@ let activitydata = [{
     }
 ];
 
-
 const seedActivity = () => Activity.bulkCreate(activitydata, { individualHooks: true });
 
 module.exports = seedActivity;
