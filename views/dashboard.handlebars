@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row mt-5 justify-content-around">
 
-    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
       <div class="card-header user">User:</div>
       <div class="card-body">
         <h5 class="card-title name">Username</h5>
@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
       <div class="card-header">Header:</div>
       <div class="card-body">
         <h5 class="card-title">Height</h5>
@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
       <div class="card-header">Header:</div>
       <div class="card-body">
         <h5 class="card-title">Age:</h5>
@@ -66,7 +66,27 @@
   <div class="row">
     <div class="col text-center">
       {{!-- <a href="/workout" class="btn btn-primary" type="submit">Add Workout</a> --}}
-      <a href="/workout" id="workout" class="btn btn-warning mr-4">Add Workout</a>
+      <a href="/workout" id="workout" class="button  is-primary mr-4">Add Workout</a>
+    </div>
+  </div>
+
+  {{!-- BMI FORM
+  <div class="row mt-5">
+    <div class="col text-center">
+      <form action="" id="bmi-form">
+        <h3>BMI Calculator</h3>
+        <p>Enter your height and weight to get a calculation of your Body Mass Index (BMI)</p>
+        <div class="input-group">
+          <span class="input-group-text">Enter Here:</span>
+          <input type="text" aria-label="height" class="form-control" placeholder="Height" id="height">
+          <input type="text" aria-label="weight" class="form-control" placeholder="Weight" id="weight">
+          <button type="submit" class="btn btn-info" id="bmi-btn">Get My BMI</button>
+        </div>
+        <div class="results mt-2">
+          <p>Your BMI is: <span id="bmi-result"></span></p>
+        </div>
+      </form>
     </div>
   </div>
 </div>
+<script src="/javascript/fitness-calculator.js"></script> --}}
